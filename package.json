@@ -1,0 +1,59 @@
+{
+  "name": "soteria",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "fastdev": "yarn build && yarn start",
+    "postbuild": "copyfiles -u 1 src/**/*.graphql dist/",
+    "codegen": "graphql-codegen --config codegen.ts",
+    "resource": "node scripts/resource.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@graphql-codegen/cli": "5.0.4",
+    "@graphql-codegen/introspection": "4.0.3",
+    "@graphql-codegen/typescript": "4.1.3",
+    "@graphql-codegen/typescript-resolvers": "4.4.2",
+    "@types/lodash": "^4.17.15",
+    "@types/nanoid": "^3.0.0",
+    "@types/node": "^22.12.0",
+    "copyfiles": "^2.4.1",
+    "nodemon": "^3.1.9",
+    "typescript": "^5.7.3"
+  },
+  "_moduleAliases": {
+    "@common": "dist/common",
+    "@config": "dist/config",
+    "@services": "dist/services",
+    "@generated/graphql": "dist/generated/graphql"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.3",
+    "@aws-sdk/client-s3": "^3.741.0",
+    "awesome-phonenumber": "^7.3.0",
+    "axios": "^1.7.9",
+    "bcrypt": "^5.1.1",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "glob": "^11.0.1",
+    "graphql": "^16.10.0",
+    "graphql-scalars": "^1.24.1",
+    "graphql-tag": "^2.12.6",
+    "ioredis": "^5.5.0",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^8.9.5",
+    "ms": "^2.1.3",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^3.0.0",
+    "paystack": "^2.0.1"
+  }
+}

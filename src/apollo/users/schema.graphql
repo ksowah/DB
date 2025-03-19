@@ -1,0 +1,28 @@
+
+type User {
+  _id: ID!
+  code: String
+  fullName: String
+  emailAddress: String
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+
+input UpdateUserInput {
+  code: String
+  fullName: String
+  phoneNumber: String
+  emailAddress: String
+}
+
+type Query {
+  getUsers(pagination: Pagination, search: Search, sort: String,): [User]
+  getUser(id: ID!): User
+  getUsersCount(search: Search,): Int
+}
+
+type Mutation {
+  updateUser(id: ID!, input: UpdateUserInput!): User
+  deleteUser(id: ID!): Boolean
+}
