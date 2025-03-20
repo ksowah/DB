@@ -1,4 +1,3 @@
-import { generateCode } from "../utils/code";
 import { UserModel } from "../models";
 import { runFindQuery, runCountQuery, runGetId } from '../utils'
 

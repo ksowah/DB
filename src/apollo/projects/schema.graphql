@@ -1,0 +1,30 @@
+
+type Project {
+  _id: ID!
+  code: String
+  name: String
+  description: String
+  AIResponse: String
+  createdBy: ID
+  createdAt: DateTime
+  updatedAt: DateTime
+}
+
+
+input UpdateProjectInput {
+  code: String
+  fullName: String
+  phoneNumber: String
+  emailAddress: String
+}
+
+type Query {
+  getProjects(pagination: Pagination, search: Search, sort: String): [Project]
+  getProject(id: ID!): Project
+  getProjectsCount(search: Search,): Int
+}
+
+type Mutation {
+  createProject(name: String!, description: String!, AIResponse: String!): Project
+  updateProject(id: ID!, name: String!, description: String!, AIResponse: String): Project
+}

@@ -6,7 +6,7 @@ import { model } from "mongoose";
 const codeTemplates = {
 
     User: lodash.template("001"),
-    Config: lodash.template("001"),
+    Project: lodash.template("001"),
 }
 
 type CodeTemplates = typeof codeTemplates

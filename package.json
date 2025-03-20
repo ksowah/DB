@@ -1,5 +1,5 @@
 {
-  "name": "soteria",
+  "name": "db_creation",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -54,6 +54,7 @@
     "ms": "^2.1.3",
     "multer": "^1.4.5-lts.1",
     "nanoid": "^3.0.0",
+    "openai": "^4.88.0",
     "paystack": "^2.0.1"
   }
 }

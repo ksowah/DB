@@ -1,0 +1,5 @@
+
+
+type Mutation {
+  streamChat(chatId: ID, prompt: String!): String
+}

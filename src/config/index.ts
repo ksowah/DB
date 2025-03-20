@@ -20,5 +20,12 @@ const config = {
     codeExpiry: ms("5 minutes"),
     secret: process.env.AUTH_SECRET || "this+is+no+secret+at+all",
   },
+  deepseek: {
+    key: process.env.DEEPSEEK_KEY || "sk-4169e183a7fd4760a93c4e8a02328232"
+  },
+  huggingface: {
+    key: process.env.HUGGINGFACE_KEY || "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",
+    model: "mistralai/Mistral-7B-Instruct-v0.2"
+  },
 };
 export default config;

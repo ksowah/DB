@@ -1,6 +1,6 @@
 import services from "../../services";
 
-const resolvers = {
+const userResolvers = {
   Query: {
     getUsers: (_, args) => {
       return services.users.getUsers(args);
@@ -22,4 +22,4 @@ const resolvers = {
   },
 };
 
-export default resolvers;
+export default userResolvers;

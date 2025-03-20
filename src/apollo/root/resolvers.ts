@@ -1,6 +1,6 @@
 const resolvers = {
     Query: {
-        getRoot: () => `Welcome to Soteria`
+        getRoot: () => `Welcome to DB Creation`
     }
 }
 

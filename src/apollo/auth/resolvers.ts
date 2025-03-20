@@ -1,6 +1,6 @@
     import services from "../../services";
 
-const resolvers = {
+const authResolvers = {
 
   Mutation: {
     loginUser: (_, args, ctx) => {
@@ -12,4 +12,4 @@ const resolvers = {
   },
 };
 
-export default resolvers;
+export default authResolvers;
