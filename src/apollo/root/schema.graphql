@@ -11,3 +11,8 @@ input Search {
   search: String
   searchFields: [String]
 }
+
+
+type Query {
+  getRoot(): String
+}
