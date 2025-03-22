@@ -19,46 +19,42 @@ export async function streamChat(args, ctx: IAppContext) {
       });
     }
 
-    const conversations = await MessageModel.find({
-      user: ctx.user,
-      chatId: chat._id,
-    })
-      .sort({ createdAt: -1 })
-      .limit(2)
-      .exec();
+    // const conversations = await MessageModel.find({
+    //   user: ctx.user,
+    //   chatId: chat._id,
+    // })
+    //   .sort({ createdAt: -1 })
+    //   .limit(2)
+    //   .exec();
 
-    const conversationMessages = conversations.reverse().flatMap((msg) => [
-      { role: "user" as const, content: msg.prompt },
-      { role: "assistant" as const, content: msg.message },
-    ]);
+    // const conversationMessages = conversations.reverse().flatMap((msg) => [
+    //   { role: "user" as const, content: msg.prompt },
+    //   { role: "assistant" as const, content: msg.message },
+    // ]);
 
-    const completion = await openai.chat.completions.create({
-      messages: [
-        {
-          role: "system" as const,
-          content:
-            "You are a database schema expert. Guide the user through creating a nosql schema. Ask one question at a time. When ready, output the schema in JSON format with this structure: { 'schema': { ... }, 'indexes': [...] }",
-        },
-        ...conversationMessages,
-        { role: "user", content: args.prompt },
-      ],
-      model: "deepseek-chat",
-      stream: true,
-    });
+    // const completion = await openai.chat.completions.create({
+    //   messages: [
+    //     {
+    //       role: "system" as const,
+    //       content:
+    //         "You are a database schema expert. Guide the user through creating a nosql schema. Ask one question at a time. When ready, output the schema in JSON format with this structure: { 'schema': { ... }, 'indexes': [...] }",
+    //     },
+    //     ...conversationMessages,
+    //     { role: "user", content: args.prompt },
+    //   ],
+    //   model: "deepseek-chat",
+    //   stream: true,
+    // });
 
-    const newMessage = await MessageModel.create({
-      user: ctx.user,
-      chatId: chat._id,
-      prompt: args.prompt,
-      message: "", 
-    })
-
-    console.log("the completio >>>", completion)
+    // const newMessage = await MessageModel.create({
+    //   user: ctx.user,
+    //   chatId: chat._id,
+    //   prompt: args.prompt,
+    //   message: "", 
+    // })
 
     return { 
-        stream: completion,
-        message: newMessage,
-        conversations,
+        chat: chat._id,
       };
   } catch (err) {
     throw err;

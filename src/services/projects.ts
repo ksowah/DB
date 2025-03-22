@@ -6,7 +6,6 @@ export async function createProject(args, ctx: IAppContext) {
   try {
     const newProject = await ProjectModel.create({
       ...args,
-      code: await generateCode("Project"),
       createdBy: ctx.user,
     });
     return newProject;
