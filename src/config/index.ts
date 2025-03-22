@@ -21,10 +21,10 @@ const config = {
     secret: process.env.AUTH_SECRET || "this+is+no+secret+at+all",
   },
   deepseek: {
-    key: process.env.DEEPSEEK_KEY || "sk-4169e183a7fd4760a93c4e8a02328232"
+    key: process.env.DEEPSEEK_KEY
   },
   huggingface: {
-    key: process.env.HUGGINGFACE_KEY || "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",
+    key: process.env.HUGGINGFACE_KEY,
     model: "mistralai/Mistral-7B-Instruct-v0.2"
   },
 };
