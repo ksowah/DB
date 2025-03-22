@@ -1,5 +1,17 @@
 
+type Message {
+  user: ID
+  prompt: String
+  chatId: ID
+  message: String
+}
+
+type StreamResponse {
+  stream: String
+  message: Message
+  conversations: [Message]
+}
 
 type Mutation {
-  streamChat(chatId: ID, prompt: String!): String
+  streamChat(chatId: ID, prompt: String!): StreamResponse
 }

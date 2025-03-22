@@ -3,11 +3,6 @@ import { IProjectDocument } from "./index.types";
 
 export const ProjectSchema = new Schema<IProjectDocument>(
   {
-    code: {
-      type: SchemaTypes.String,
-      required: true,
-      unique: true,
-    },
     name:{
       type: SchemaTypes.String, 
       required: true,

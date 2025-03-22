@@ -1,0 +1,23 @@
+
+type Chat {
+  name: String
+  createdBy: ID
+}
+
+
+input UpdateChatInput {
+  code: String
+  fullName: String
+  phoneNumber: String
+  emailAddress: String
+}
+
+type Query {
+  getChats(pagination: Pagination, search: Search, sort: String): [Chat]
+  getChat(id: ID!): Chat
+  getChatsCount(search: Search,): Int
+}
+
+type Mutation {
+  updateChat(id: ID!, name: String!, description: String!, AIResponse: String): Chat
+}
