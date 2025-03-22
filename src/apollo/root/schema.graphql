@@ -14,5 +14,5 @@ input Search {
 
 
 type Query {
-  getRoot(): String
+  getRoot: String
 }
