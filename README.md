@@ -97,6 +97,7 @@ npm install
 ```bash
 NEXT_PUBLIC_APOLLO_URI=
 NEXT_PUBLIC_DOMAIN=
+```
 
 ## Configure Environment Variables For Backend
 ```bash
